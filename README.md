@@ -1,4 +1,4 @@
-# Raspbrerry PI Monioring Dashboard
+# Raspbrerry PI Monitoring Dashboard
 
 ![screenshot](screenshot.png "screenshot")
 
