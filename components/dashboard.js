@@ -2,32 +2,51 @@ import Card from "./card";
 
 export default function Dashboard(props) {
   const { system, cpu, mem, swap, disk, disksIO, eth0, wlan0 } = props;
-  const { onReload, loading } = props;
 
   const data = [
     {
       title: "CPU Temperature",
       icon: "/icons/fire.svg",
       data: `${cpu.temperature}°C`,
+      status:
+        cpu.temperature > 90
+          ? "warning"
+          : cpu.temperature > 75
+          ? "info"
+          : "neutral",
     },
-    { title: "CPU Usage", icon: "/icons/chip.svg", data: `${cpu.usage}%` },
+    {
+      title: "CPU Usage",
+      icon: "/icons/chip.svg",
+      data: `${cpu.usage}%`,
+      status: cpu.usage > 90 ? "warning" : cpu.usage > 75 ? "info" : "neutral",
+    },
     {
       title: "Memory Usage",
       icon: "/icons/view-boards.svg",
       data: `${mem.usage}%`,
       details: `${mem.freeMB} / ${mem.totalMB} MB`,
+      status: mem.usage > 90 ? "warning" : mem.usage > 75 ? "info" : "neutral",
     },
     {
       title: "SWAP Usage",
       icon: "/icons/switch-horizontal.svg",
       data: `${swap.usage}%`,
       details: `${swap.freeMB} / ${swap.totalMB} MB`,
+      status:
+        swap.usage > 90 ? "warning" : swap.usage > 75 ? "info" : "neutral",
     },
     {
       title: "Disk Usage",
       icon: "/icons/credit-card.svg",
       data: `${disk.usedPercent}%`,
       details: `${disk.usedGB} / ${disk.totalGB} GB`,
+      status:
+        disk.usedPercent > 90
+          ? "warning"
+          : disk.usedPercent > 75
+          ? "info"
+          : "neutral",
     },
     {
       title: "DisK IO",
@@ -86,9 +105,11 @@ export default function Dashboard(props) {
       </span>
       <span className="text-left md:text-center">
         <b>Status</b>:{" "}
-        <span className="text-green-400">
-          {system.online ? "Online" : "Offline"}
-        </span>
+        {system.online ? (
+          <span className="text-green-400">Online</span>
+        ) : (
+          <span className="text-red-400">Offline</span>
+        )}
       </span>
     </div>
   );
@@ -110,16 +131,6 @@ export default function Dashboard(props) {
     <div>
       {systemSummary}
       {cards}
-
-      <div
-        onClick={onReload}
-        className="w-16 h-16 rounded-full bg-black bg-opacity-60 shadow p-3 fixed bottom-8 right-8 z-30 cursor-pointer select-none "
-      >
-        <img
-          src="/icons/refresh.svg"
-          className={loading ? "animate-spin" : ""}
-        />
-      </div>
     </div>
   );
 }

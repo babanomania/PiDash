@@ -1,16 +1,17 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Layout({ children, active }) {
   return (
-    <div>
+    <div className="bg-gray-50 bg-opacity-10 min-h-screen">
       <Head>
         <title>Rasberry Pi | {active}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <div className="flex flex-row p-2 space-x-2 items-center shadow text-white bg-red-600">
-          <img src="pi-logo.svg" className="h-9 px-5" />
+        <div className="flex flex-row space-x-2 items-center shadow text-white bg-red-600">
+          <img src="pi-logo.svg" className="h-12 px-5" />
           <div
             className={
               active === "Dashboard"
@@ -18,23 +19,23 @@ export default function Layout({ children, active }) {
                 : "hover:bg-white hover:bg-opacity-50 rounded hover:shadow-inner p-2 cursor-pointer"
             }
           >
-            Dashboard
+            <Link href="/">Dashboard</Link>
           </div>
           <div
             className={
               active === "Applications"
-                ? "bg-white bg-opacity-50 hover:bg-opacity-30 hover:shadow-inner rounded p-2 cursor-pointer"
-                : "hover:bg-white hover:bg-opacity-50 rounded hover:shadow-inner p-2 cursor-pointer"
+                ? "bg-white bg-opacity-50 hover:bg-opacity-30 hover:shadow-inner rounded p-2 m-2 cursor-pointer"
+                : "hover:bg-white hover:bg-opacity-50 rounded hover:shadow-inner p-2 m-2 cursor-pointer"
             }
           >
-            Applications
+            <Link href="/apps">Applications</Link>
           </div>
         </div>
 
-        <div className="container mx-auto">{children}</div>
+        <div className="container mx-auto ">{children}</div>
       </main>
 
-      <footer className="fixed bottom-0 w-full text-center bg-gray-100 border-t-2 py-4 border-gray-200">
+      <footer className="fixed bottom-0 w-full text-center text-xs bg-gray-100 border-t-2 py-4 border-gray-200">
         Powered by Rasberry PI
       </footer>
     </div>
