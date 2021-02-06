@@ -1,0 +1,21 @@
+{
+  "name": "pi-dash",
+  "version": "0.1.0",
+  "descripton": "A Raspberry Pi dashboard, powered by NodeJS.",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.4",
+    "moment": "^2.29.1",
+    "next": "10.0.6",
+    "postcss": "^8.2.4",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "systeminformation": "^5.0.9",
+    "tailwindcss": "^2.0.2"
+  }
+}
