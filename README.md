@@ -1,3 +1,7 @@
+# Raspbrerry PI Monioring Dashboard
+
+![screenshot](screenshot.png "screenshot")
+
 ## How to Deploy and Run on your Rasberry PI
 
 - Then clone the repo
