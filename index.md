@@ -1,37 +1,97 @@
-## Welcome to GitHub Pages
+# Raspberry PI Monitoring Dashboard
 
-You can use the [editor on GitHub](https://github.com/babanomania/PiDash/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A lightweight & minimalistic monitoring dashboard for Raspberry Pi
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![screenshot](screenshot.png "screenshot")
 
-### Markdown
+## Setup on the Raspberry Pi
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Testing the Code
 
-```markdown
-Syntax highlighted code block
+- Install nodejs on your pi using the below command
 
-# Header 1
-## Header 2
-### Header 3
+  ```bash
+  sudo apt update
+  sudo apt-get install nodejs
+  sudo apt-get install npm
+  ```
+  
+- Install nodejs on your pi using the below command
 
-- Bulleted
-- List
+  ```bash
+  sudo apt update
+  sudo apt-get install git
+  ```
+  
+- Then clone the repo
 
-1. Numbered
-2. List
+  ```bash
+  mkdir ~/PiDash
+  cd ~/PiDash
+  git clone https://github.com/babanomania/PiDash.git
+  ```
 
-**Bold** and _Italic_ and `Code` text
+- Run the nodejs server and test
 
-[Link](url) and ![Image](src)
-```
+  ```bash
+  npx next build
+  npx next start -p 8080
+  ```
+  
+  Then, Open [http://192.168.0.104:3000](http://192.168.0.104:3000) with your browser where 192.168.0.104 is your PI's ip.
+  
+  nb: Here running the build command is an important step, it will build the project to run faster,
+  once you run this step, the application can be run anytime using the start command
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+- To Start the server on a different path say 8181 use the below commands
 
-### Jekyll Themes
+  ```bash
+  npx next build
+  npx next start -p 8181
+  ```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/babanomania/PiDash/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+  Then, Open [http://192.168.0.104:8181](http://192.168.0.104:8181) with your browser where 192.168.0.104 is your PI's ip.
 
-### Support or Contact
+### Customizing Applications List
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+  PiDash has an feature to show an applications list via the navigation bar on the top, to customize a list of applications you can edit the `shortcut.config.js` file as per your needs
+
+### Setting it as a Service
+
+- Create a PiDash.service file as below
+
+  ```
+  [Unit]
+  Description=PiDash Service
+  After=network.target
+
+  [Service]
+  WorkingDirectory=/home/pi/PiDash
+  ExecStart=/usr/bin/npx next start -p 8080
+  Restart=on-failure
+  User=pi
+
+  [Install]
+  WantedBy=multi-user.target
+  ```
+  
+- Now copy this file to the /etc/systemd/system directory
+  
+    ```bash
+    sudo cp timestamp.service /etc/systemd/system
+    
+- Then enable the service
+  
+    ```bash
+    sudo systemctl enable PiDash.service
+    ```
+    
+- Viewing Service Logs
+    
+    Instead of logging to standard out on the console, systemd is now managing our service’s logging. Logs can be viewed as follows
+
+    ```bash
+    journalctl -u PiDash
+    ```
+    
+That's it! Your PiDash service is currently up and running and in case of a restart it will start automatically when the system boots.
