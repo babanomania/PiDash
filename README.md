@@ -1,5 +1,7 @@
 # Raspberry PI Monitoring Dashboard
 
+A lightweight & minimalistic monitoring dashboard for Raspberry Pi
+
 ![screenshot](screenshot.png "screenshot")
 
 ## Setup on the Raspberry Pi
@@ -49,6 +51,10 @@
   ```
 
   Then, Open [http://192.168.0.104:8181](http://192.168.0.104:8181) with your browser where 192.168.0.104 is your PI's ip.
+
+### Customizing Applications List
+
+  PiDash has an feature to show an applications list via the navigation bar on the top, to customize a list of applications you can edit the `shortcut.config.js ` file as per your needs
 
 ### Setting it as a Service
 
