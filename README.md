@@ -54,7 +54,7 @@ A lightweight & minimalistic monitoring dashboard for Raspberry Pi
 
 ### Customizing Applications List
 
-  PiDash has an feature to show an applications list via the navigation bar on the top, to customize a list of applications you can edit the `shortcut.config.js ` file as per your needs
+  PiDash has an feature to show an applications list via the navigation bar on the top, to customize a list of applications you can edit the `shortcut.config.js` file as per your needs
 
 ### Setting it as a Service
 
