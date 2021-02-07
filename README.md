@@ -66,18 +66,18 @@
   WantedBy=multi-user.target
   ```
   
-  - Now copy this file to the /etc/systemd/system directory
+- Now copy this file to the /etc/systemd/system directory
   
     ```bash
     sudo cp timestamp.service /etc/systemd/system
     
-  - Then enable the service
+- Then enable the service
   
     ```bash
     sudo systemctl enable PiDash.service
     ```
     
-  - Viewing Service Logs
+- Viewing Service Logs
     
     Instead of logging to standard out on the console, systemd is now managing our service’s logging. Logs can be viewed as follows
 
