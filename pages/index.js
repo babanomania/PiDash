@@ -11,7 +11,7 @@ export default function Home(props) {
   });
   const [isError, setError] = useState(false);
 
-  const RELOAD_MS = 10 * 1000;
+  const RELOAD_MS = 60 * 1000;
 
   useEffect(() => {
     const timer = setTimeout(() => doReload(), RELOAD_MS);
