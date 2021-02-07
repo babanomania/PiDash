@@ -38,7 +38,7 @@
   
   Then, Open [http://192.168.0.104:3000](http://192.168.0.104:3000) with your browser where 192.168.0.104 is your PI's ip.
   
-  nb:Here running the build command is an important step, it will build the project to run faster,
+  nb: Here running the build command is an important step, it will build the project to run faster,
   once you run this step, the application can be run anytime using the start command
 
 - To Start the server on a different path say 8181 use the below commands
