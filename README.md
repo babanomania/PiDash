@@ -85,4 +85,4 @@
     journalctl -u PiDash
     ```
     
-  That's it! Your PiDash is currently running and in case of a restart, it will start when the system boots.
+That's it! Your PiDash service is currently up and running and in case of a restart it will start automatically when the system boots.
