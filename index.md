@@ -2,7 +2,7 @@
 
 A lightweight & minimalistic monitoring dashboard for Raspberry Pi
 
-![screenshot](screenshot.png "screenshot")
+![screenshot](https://raw.githubusercontent.com/babanomania/PiDash/master/screenshot.png "screenshot")
 
 ## Setup on the Raspberry Pi
 
