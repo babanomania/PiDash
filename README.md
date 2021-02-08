@@ -11,9 +11,9 @@ A lightweight & minimalistic monitoring dashboard for Raspberry Pi
 - Install nodejs on your pi using the below command
 
   ```bash
-  sudo apt update
-  sudo apt-get install nodejs
-  sudo apt-get install npm
+  curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+  sudo apt install -y nodejs
+  sudo apt purge -y nodejs.*
   ```
   
 - Install nodejs on your pi using the below command
