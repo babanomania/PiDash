@@ -79,11 +79,12 @@ A lightweight & minimalistic monitoring dashboard for Raspberry Pi
 - Now copy this file to the /etc/systemd/system directory
   
     ```bash
-    sudo cp timestamp.service /etc/systemd/system
+    sudo cp PiDash.service /etc/systemd/system
     
 - Then enable the service
   
     ```bash
+    sudo systemctl start PiDash.service
     sudo systemctl enable PiDash.service
     ```
     
