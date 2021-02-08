@@ -28,12 +28,13 @@ A lightweight & minimalistic monitoring dashboard for Raspberry Pi
   ```bash
   mkdir ~/PiDash
   cd ~/PiDash
-  git clone https://github.com/babanomania/PiDash.git
+  git clone https://github.com/babanomania/PiDash.git .
   ```
 
 - Run the nodejs server and test
 
   ```bash
+  npm i
   npx next build
   npx next start -p 8080
   ```
