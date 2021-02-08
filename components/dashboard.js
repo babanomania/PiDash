@@ -25,14 +25,14 @@ export default function Dashboard(props) {
       title: "Memory Usage",
       icon: "/icons/view-boards.svg",
       data: `${mem.usage}%`,
-      details: `${mem.freeMB} / ${mem.totalMB} MB`,
+      details: `${mem.usedMB} / ${mem.totalMB} MB`,
       status: mem.usage > 90 ? "warning" : mem.usage > 75 ? "info" : "neutral",
     },
     {
       title: "SWAP Usage",
       icon: "/icons/switch-horizontal.svg",
       data: `${swap.usage}%`,
-      details: `${swap.freeMB} / ${swap.totalMB} MB`,
+      details: `${swap.usedMB} / ${swap.totalMB} MB`,
       status:
         swap.usage > 90 ? "warning" : swap.usage > 75 ? "info" : "neutral",
     },
