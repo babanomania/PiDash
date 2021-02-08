@@ -9,9 +9,9 @@ export default function Dashboard(props) {
       icon: "/icons/fire.svg",
       data: `${cpu.temperature}°C`,
       status:
-        cpu.temperature > 90
+        cpu.temperature > 75
           ? "warning"
-          : cpu.temperature > 75
+          : cpu.temperature > 60
           ? "info"
           : "neutral",
     },
