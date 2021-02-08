@@ -16,7 +16,7 @@ A lightweight & minimalistic monitoring dashboard for Raspberry Pi
   sudo apt purge -y nodejs.*
   ```
   
-- Install nodejs on your pi using the below command
+- Install git on your pi using the below command
 
   ```bash
   sudo apt update
