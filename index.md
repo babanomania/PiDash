@@ -2,7 +2,7 @@
 
 A lightweight & minimalistic monitoring dashboard for Raspberry Pi
 
-![screenshot](https://github.com/babanomania/PiDash/raw/master/screenshot.png "screenshot")
+![screenshot](screenshot.png "screenshot")
 
 ## Setup on the Raspberry Pi
 
@@ -11,12 +11,12 @@ A lightweight & minimalistic monitoring dashboard for Raspberry Pi
 - Install nodejs on your pi using the below command
 
   ```bash
-  sudo apt update
-  sudo apt-get install nodejs
-  sudo apt-get install npm
+  curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+  sudo apt install -y nodejs
+  sudo apt purge -y nodejs.*
   ```
   
-- Install nodejs on your pi using the below command
+- Install git on your pi using the below command
 
   ```bash
   sudo apt update
