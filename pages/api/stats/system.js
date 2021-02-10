@@ -1,4 +1,4 @@
-import getSystemStats from "../../lib/getSystemStats";
+import getSystemStats from "../../../lib/getSystemStats";
 
 export default async (req, res) => {
   let data = await getSystemStats();

@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import Layout from "../components/layout";
-
-import getSystemStats from "../lib/getSystemStats";
-import Dashboard from "../components/dashboard";
+import getDockerStats from "../lib/getDockerStats";
 
 import { icon_refresh } from "../components/icons";
+import Container from "../components/containers";
 
-export default function Home(props) {
+export default function Docker(props) {
   const [state, setState] = useState({
     loading: false,
     data: props,
@@ -22,7 +21,7 @@ export default function Home(props) {
 
   const doReload = (e) => {
     setState({ ...state, loading: true });
-    fetch(`api/stats/system`)
+    fetch(`api/stats/docker`)
       .then((res) =>
         res.json().then((json) => {
           setState({ data: json, loading: false });
@@ -63,14 +62,14 @@ export default function Home(props) {
   );
 
   return (
-    <Layout active="Dashboard">
-      {isError ? show_error() : <Dashboard {...state.data} />}
+    <Layout active="Docker">
+      {isError ? show_error() : <Container {...state.data} />}
       {state.loading ? show_progress() : null}
     </Layout>
   );
 }
 
 export async function getServerSideProps(context) {
-  const props = await getSystemStats();
+  const props = await getDockerStats();
   return { props };
 }
