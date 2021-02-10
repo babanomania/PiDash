@@ -7,9 +7,9 @@ export const icon_chip = (
   >
     <path d="M13 7H7v6h6V7z" />
     <path
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     />
   </svg>
 );
@@ -22,9 +22,9 @@ export const icon_fire = (
     className="h-4 px-2"
   >
     <path
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
-      clip-rule="evenodd"
+      clipRule="evenodd"
     />
   </svg>
 );
@@ -53,10 +53,10 @@ export const icon_switch_horizontal = (
 
 export const icon_memory = (
   <svg
-    ariaHidden="true"
+    aria-hidden="true"
     focusable="false"
-    dataPrefix="fas"
-    dataIcon="memory"
+    dataprefix="fas"
+    dataicon="memory"
     className="svg-inline--fa fa-memory fa-w-20 h-4 px-2"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
@@ -71,10 +71,10 @@ export const icon_memory = (
 
 export const icon_sd_card = (
   <svg
-    ariaHidden="true"
+    aria-hidden="true"
     focusable="false"
-    dataPrefix="fas"
-    dataIcon="sd-card"
+    dataprefix="fas"
+    dataicon="sd-card"
     className="svg-inline--fa fa-sd-card fa-w-12 h-4 px-2"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
@@ -100,10 +100,10 @@ export const icon_switch_vertical = (
 
 export const icon_ethernet = (
   <svg
-    ariaHidden="true"
+    aria-hidden="true"
     focusable="false"
-    dataPrefix="fas"
-    dataIcon="ethernet"
+    dataprefix="fas"
+    dataicon="ethernet"
     className="svg-inline--fa fa-ethernet fa-w-16 h-4 px-2"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
@@ -133,10 +133,10 @@ export const icon_wifi = (
 
 export const icon_docker = (
   <svg
-    ariaHidden="true"
+    aria-hidden="true"
     focusable="false"
-    dataPrefix="fab"
-    dataIcon="docker"
+    dataprefix="fab"
+    dataicon="docker"
     className="svg-inline--fa fa-docker fa-w-20 h-12 md:h-4 px-2"
     role="img"
     xmlns="http://www.w3.org/2000/svg"

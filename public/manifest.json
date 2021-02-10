@@ -1,0 +1,13 @@
+{
+    "name": "Raspberry Pi Dashboard",
+    "short_name": "Pi-Dash",
+    "icons": [
+        {
+            "src": "pi-logo.svg",
+            "sizes": "48x48 72x72 96x96 128x128 256x256"
+        }
+    ],
+    "theme_color": "#dc2626",
+    "background_color": "#dc2626",
+    "display": "standalone"
+}

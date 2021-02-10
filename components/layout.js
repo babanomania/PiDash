@@ -20,6 +20,7 @@ export default function Layout({ children, active }) {
         <Head>
           <title>Rasberry Pi | {active}</title>
           <link rel="icon" href="/favicon.ico" />
+          <link rel="manifest" href="/manifest.json" />
         </Head>
 
         <main>
@@ -58,7 +59,7 @@ export default function Layout({ children, active }) {
               <div>
                 {isDarkMode ? (
                   <div
-                    class="cursor-pointer select-none p-1 rounded-full pl-6 shadow-inner bg-red-800 dark:bg-red-700"
+                    className="cursor-pointer select-none p-1 rounded-full pl-6 shadow-inner bg-red-800 dark:bg-red-700"
                     onClick={(e) => {
                       localStorage.setItem(storage_key, false);
                       setDarkMode(false);
@@ -68,7 +69,7 @@ export default function Layout({ children, active }) {
                   </div>
                 ) : (
                   <div
-                    class="cursor-pointer select-none p-1 rounded-full pr-6 shadow-inner bg-red-800 dark:bg-red-700"
+                    className="cursor-pointer select-none p-1 rounded-full pr-6 shadow-inner bg-red-800 dark:bg-red-700"
                     onClick={(e) => {
                       localStorage.setItem(storage_key, true);
                       setDarkMode(true);
