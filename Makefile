@@ -7,6 +7,7 @@ all: install
 install: remove
 
 		@echo "Building Application"
+		@npm install
 		@npx next build
 
 		@echo "Installing Service"
@@ -40,6 +41,7 @@ upgrade:
 		@git pull origin
 
 		@echo "Building Application"
+		@npm install
 		@npx next build
 
 		@echo "Starting Service"
