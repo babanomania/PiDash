@@ -1,18 +1,19 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
 
 import { icon_moon, icon_sun } from "./icons";
 
-const storage_key = "pi-dash:dark-mode";
+const storage_key = "dark-mode";
 
 export default function Layout({ children, active }) {
   const [isDarkMode, setDarkMode] = useState();
+  const [cookie, setCookie] = useCookies([storage_key]);
 
   useEffect(() => {
-    if (isDarkMode === undefined)
-      setDarkMode(window.localStorage.getItem(storage_key) ? true : false);
-  }, [isDarkMode]);
+    if (isDarkMode === undefined) setDarkMode(cookie[storage_key] === "true");
+  }, [isDarkMode, cookie]);
 
   return (
     <div className={isDarkMode ? "dark" : null}>
@@ -61,7 +62,7 @@ export default function Layout({ children, active }) {
                   <div
                     className="cursor-pointer select-none p-1 rounded-full pl-6 shadow-inner bg-red-800 dark:bg-red-700"
                     onClick={(e) => {
-                      localStorage.setItem(storage_key, false);
+                      setCookie(storage_key, false);
                       setDarkMode(false);
                     }}
                   >
@@ -71,7 +72,7 @@ export default function Layout({ children, active }) {
                   <div
                     className="cursor-pointer select-none p-1 rounded-full pr-6 shadow-inner bg-red-800 dark:bg-red-700"
                     onClick={(e) => {
-                      localStorage.setItem(storage_key, true);
+                      setCookie(storage_key, true);
                       setDarkMode(true);
                     }}
                   >
