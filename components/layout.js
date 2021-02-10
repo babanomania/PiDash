@@ -1,11 +1,18 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { icon_moon, icon_sun } from "./icons";
 
+const storage_key = "pi-dash:dark-mode";
+
 export default function Layout({ children, active }) {
-  const [isDarkMode, setDarkMode] = useState(false);
+  const [isDarkMode, setDarkMode] = useState();
+
+  useEffect(() => {
+    if (isDarkMode === undefined)
+      setDarkMode(window.localStorage.getItem(storage_key) ? true : false);
+  }, [isDarkMode]);
 
   return (
     <div className={isDarkMode ? "dark" : null}>
@@ -23,7 +30,7 @@ export default function Layout({ children, active }) {
                 <div
                   className={
                     active === "Dashboard"
-                      ? "bg-white dark:bg-red-600 bg-opacity-50 hover:bg-opacity-30 hover:shadow-inner rounded p-2 cursor-pointer"
+                      ? "bg-white dark:bg-red-700 bg-opacity-50 hover:bg-opacity-30 hover:shadow-inner rounded p-2 cursor-pointer"
                       : "hover:bg-white hover:bg-opacity-50 rounded hover:shadow-inner p-2 cursor-pointer"
                   }
                 >
@@ -32,7 +39,7 @@ export default function Layout({ children, active }) {
                 <div
                   className={
                     active === "Applications"
-                      ? "bg-white dark:bg-red-600 bg-opacity-50 hover:bg-opacity-30 hover:shadow-inner rounded p-2 m-2 cursor-pointer"
+                      ? "bg-white dark:bg-red-700 bg-opacity-50 hover:bg-opacity-30 hover:shadow-inner rounded p-2 m-2 cursor-pointer"
                       : "hover:bg-white hover:bg-opacity-50 rounded hover:shadow-inner p-2 m-2 cursor-pointer"
                   }
                 >
@@ -41,7 +48,7 @@ export default function Layout({ children, active }) {
                 <div
                   className={
                     active === "docker"
-                      ? "bg-white dark:bg-red-600 bg-opacity-50 hover:bg-opacity-30 hover:shadow-inner rounded p-2 m-2 cursor-pointer"
+                      ? "bg-white dark:bg-red-700 bg-opacity-50 hover:bg-opacity-30 hover:shadow-inner rounded p-2 m-2 cursor-pointer"
                       : "hover:bg-white hover:bg-opacity-50 rounded hover:shadow-inner p-2 m-2 cursor-pointer"
                   }
                 >
@@ -52,14 +59,20 @@ export default function Layout({ children, active }) {
                 {isDarkMode ? (
                   <div
                     class="cursor-pointer select-none p-1 rounded-full pl-6 shadow-inner bg-red-800 dark:bg-red-700"
-                    onClick={(e) => setDarkMode(false)}
+                    onClick={(e) => {
+                      localStorage.setItem(storage_key, false);
+                      setDarkMode(false);
+                    }}
                   >
                     {icon_moon}
                   </div>
                 ) : (
                   <div
                     class="cursor-pointer select-none p-1 rounded-full pr-6 shadow-inner bg-red-800 dark:bg-red-700"
-                    onClick={(e) => setDarkMode(true)}
+                    onClick={(e) => {
+                      localStorage.setItem(storage_key, true);
+                      setDarkMode(true);
+                    }}
                   >
                     {icon_sun}
                   </div>
