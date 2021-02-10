@@ -39,9 +39,6 @@ A lightweight & minimalistic monitoring dashboard for Raspberry Pi
 
   Then, Open [http://192.168.0.109:8080](http://192.168.0.109:8080) with your browser where 192.168.0.109 is your PI's ip.
 
-  note: Here running the build command is an important step, it will build the project to run faster,
-  once you run this step, the application can be run anytime using the start command
-
 - For updating the code use the below command
 
   ```bash
