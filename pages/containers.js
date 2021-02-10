@@ -26,6 +26,5 @@ export default function Conatiner({ docker }) {
 
 export async function getServerSideProps(context) {
   const props = await getDockerStats();
-  console.log(props);
   return { props };
 }
