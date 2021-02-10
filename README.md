@@ -4,9 +4,7 @@ A lightweight & minimalistic monitoring dashboard for Raspberry Pi
 
 ![screenshot](screenshot.png "screenshot")
 
-## Setup on the Raspberry Pi
-
-### Testing the Code
+## Installation on the Raspberry Pi
 
 - Install nodejs on your pi using the below command
 
