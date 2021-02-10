@@ -40,7 +40,7 @@ A lightweight & minimalistic monitoring dashboard for Raspberry Pi
 - For updating the code use the below command
 
   ```bash
-  make update port=8080
+  make upgrade port=8080
   ```
 
 That's it! Your PiDash service is currently up and running and in case of a restart it will start automatically when the system boots.
