@@ -30,6 +30,15 @@ export default function Layout({ children, active }) {
           >
             <Link href="/apps">Applications</Link>
           </div>
+          <div
+            className={
+              active === "Containers"
+                ? "bg-white bg-opacity-50 hover:bg-opacity-30 hover:shadow-inner rounded p-2 m-2 cursor-pointer"
+                : "hover:bg-white hover:bg-opacity-50 rounded hover:shadow-inner p-2 m-2 cursor-pointer"
+            }
+          >
+            <Link href="/containers">Containers</Link>
+          </div>
         </div>
 
         <div className="container mx-auto ">{children}</div>
